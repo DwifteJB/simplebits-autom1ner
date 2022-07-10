@@ -99,7 +99,7 @@ function loop() {
             }
         }, 4000);
         console.log(`autom1ner: just used ${energy} energy and ${dominance} dominance`);
-	    loop();
+	loop();
     }, loopTimeStart*60*1000);
 }
 loop();
