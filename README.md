@@ -1,4 +1,8 @@
 # SBA1M
+
+**License: GPL-2**
+
+
 **Simplebits-autom1ner** is exactly as the name implies, in any <a href="https://simplebits.io/mining">simplebits mining</a> games, it will automatically use your energy and dominance up.
 
 ## How to use
