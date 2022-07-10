@@ -10,7 +10,7 @@
 
 
 /* CONFIG */
-var loopTimeStart = 0.2; // IN MINUTES
+var loopTimeStart = 1; // IN MINUTES
 var verbose = true;
 /* CONFIG END */
 
@@ -56,7 +56,7 @@ function loop() {
                 (verbose == true) ? console.log(`Dominance clicked 1 button.`) : null;
             } 
             (verbose == true) ? console.log(`dominanceCount: ${dominanceCount}`) : null;
-            if (dominanceCount == dominance) {
+            if (dominanceCount >= dominance) {
                 (verbose == true) ? console.log("Clearing dominance Loop") : null;
                 dominanceFinish = true;
                 clearInterval(dominanceLoop);
@@ -90,7 +90,7 @@ function loop() {
                     (verbose == true) ? console.log(`Energy clicked 1 button.`) : null;
                 } 
                 (verbose == true) ? console.log(`energyCount: ${energyCount}`) : null;
-                if (energyCount == energy) {
+                if (energyCount >= energy) {
                     (verbose == true) ? console.log(`Clearing energy Loop`) : null;
                     clearInterval(energyLoop);
                 }
