@@ -14,6 +14,7 @@ var loopTimeStart = 1; // IN MINUTES
 var verbose = true;
 /* CONFIG END */
 
+console.log(`autom1ner has started :)\nCreated by Dwifte\nLooping every ${loopTimeStart} minute(s)\nVerbose: ${verbose}`)
 function loop() {
     setTimeout(function() {
         var dominanceButton = document.getElementsByClassName("disabled:opacity-90 disabled:cursor-not-allowed focus:outline-none flex items-center font-bold justify-center py-1 px-3 text-gray-100 hover:text-gray-1 00 dark:text-gray-200 dark:hover:text-gray-300 bg-indigo-500 hover:bg-indigo-600 duration-200");
