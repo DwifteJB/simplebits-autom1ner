@@ -15,11 +15,12 @@
 
 ### Config
 
-Heres the current config from the v2.0.0 version:
+Heres the current config from the v2.1.0 version:
 
     /* CONFIG */
     var loopTimeStart = 1; // How many minutes it'll take for autom1ner to loop.
     var verbose = true; // Debug messages, recommended on but can cause clutter.
+    var minimumAmount = 0; // how much energy/dominance you want before you click the buttons
     /* CONFIG END */
     
    
