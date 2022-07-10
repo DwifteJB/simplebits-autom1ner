@@ -10,7 +10,7 @@
 
 
 /* CONFIG */
-var loopTimeStart = 1; // IN MINUTES
+var loopTimeStart = 0.2; // IN MINUTES
 var verbose = true;
 /* CONFIG END */
 
@@ -61,7 +61,7 @@ function loop() {
                 dominanceFinish = true;
                 clearInterval(dominanceLoop);
             }		
-        }, 2000);
+        }, 4000);
         var energyLoop = setInterval(() => { 
             if (dominanceFinish == true) {
                 (verbose == true) ? console.log(`Energy loop started.`) : null;
@@ -97,7 +97,7 @@ function loop() {
             } else {
                 (verbose == true) ? console.log(`Waiting for dominance loop...`) : null;
             }
-        }, 2000);
+        }, 4000);
         console.log(`autom1ner: just used ${energy} energy and ${dominance} dominance`);
 	    loop();
     }, loopTimeStart*60*1000);
