@@ -1,6 +1,6 @@
 /*
-        GNU GENERAL PUBLIC LICENSE V2.0
-        DO NOT REMOVE ANY OF THESE LINES.
+        	GNU GENERAL PUBLIC LICENSE V2.0
+       		DO NOT REMOVE ANY OF THESE LINES.
 
 		SCRIPT WRITTEN BY DWIFTE (https://github.com/DwifteJB)
 		PASTE INTO THE CONSOLE ON ANY
@@ -28,17 +28,16 @@ function loop() {
         let energy = document.getElementsByClassName("text-xs text-teal-500")[0].innerHTML.trim().split(" ")[0];
         let dominance = document.getElementsByClassName("text-xs text-indigo-400")[0].innerHTML.trim().split(" ")[0];
         console.log(`Dominance Loop started.`);
-        var domianceLoop = setInterval(() => { 
+        var dominanceLoop = setInterval(() => { 
             if (dominance == 0) {
-                return clearInterval(domianceLoop);
+                return clearInterval(dominanceLoop);
             }
             dominanceButton.click(); 
             dominanceCount++;
             console.log(`dominanceCount: ${dominanceCount}`);
             if (dominanceCount == dominance) {
-                console.log("Clearing Domiance Loop")
-                clearInterval(domianceLoop);
-                energyLoop
+                console.log("Clearing dominance Loop")
+                clearInterval(dominanceLoop);
             }		
         }, 2000);
         console.log(`Energy Loop started.`);
@@ -58,7 +57,7 @@ function loop() {
                 console.log("Waiting for dominance loop..");
             }
         }, 2000);
-        console.log(`autom1ner: just used ${energy} energy and ${dominance} domiance`);
+        console.log(`autom1ner: just used ${energy} energy and ${dominance} dominance`);
 	    loop();
     }, loopTimeStart*60*1000);
 }
