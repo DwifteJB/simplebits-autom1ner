@@ -75,9 +75,9 @@ function loop() {
             }		
         }, 4000);
         var energyLoop = setInterval(() => { 
-            if (dominanceFinish <= minimumAmount) {
+            if (dominanceFinish == true) {
                 (verbose == true) ? console.log(`Energy loop started.`) : null;
-                if (energy == 0) {
+                if (energy <= minimumAmount) {
                     return clearInterval(energyLoop);
                 }
                 if (energy-100 >= 0) {
