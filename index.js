@@ -13,8 +13,18 @@
 var loopTimeStart = 1; // IN MINUTES
 var verbose = true; // debug logs
 var minimumAmount = 0; // how much energy/dominance you want before you click the buttons
+var minifie = false; // removes elements from the screen that isn't required (can save resources)
 /* CONFIG END */
 
+if (minifie == true) {
+    try {
+        document.getElementsByClassName("mt-1 flex flex-col overflow-auto h-64 px-4 mb-10")[0].outerHTML = "";
+        document.getElementsByClassName("container flex flex-col mx-auto w-full bg-white dark:bg-gray-700 rounded-lg shadow h-full")[0].outerHTML = "";
+        document.getElementsByClassName("fixed bottom-0 right-0 mr-2 md:mr-4")[0].outerHTML = ""
+    } catch (e) {
+        console.log("Couldn't minifie.")
+    }
+}
 console.log(`autom1ner has started :)\nCreated by Dwifte\nLooping every ${loopTimeStart} minute(s)\nVerbose: ${verbose}`)
 function loop() {
     setTimeout(function() {
