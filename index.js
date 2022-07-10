@@ -11,7 +11,8 @@
 
 /* CONFIG */
 var loopTimeStart = 1; // IN MINUTES
-var verbose = true;
+var verbose = true; // debug logs
+var minimumAmount = 0; // how much energy/dominance you want before you click the buttons
 /* CONFIG END */
 
 console.log(`autom1ner has started :)\nCreated by Dwifte\nLooping every ${loopTimeStart} minute(s)\nVerbose: ${verbose}`)
@@ -30,7 +31,7 @@ function loop() {
         let dominance = document.getElementsByClassName("text-xs text-indigo-400")[0].innerHTML.trim().split(" ")[0];
         (verbose == true) ? console.log(`Dominance Loop started.`) : null;
         var dominanceLoop = setInterval(() => { 
-            if (dominance == 0) {
+            if (dominance <= minimumAmount) {
                 dominanceFinish = true;
                 return clearInterval(dominanceLoop);
             }
@@ -64,7 +65,7 @@ function loop() {
             }		
         }, 4000);
         var energyLoop = setInterval(() => { 
-            if (dominanceFinish == true) {
+            if (dominanceFinish <= minimumAmount) {
                 (verbose == true) ? console.log(`Energy loop started.`) : null;
                 if (energy == 0) {
                     return clearInterval(energyLoop);
