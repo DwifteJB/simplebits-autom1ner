@@ -15,13 +15,13 @@
     var loopTimeStart = 1; // IN MINUTES
     var verbose = true; // debug logs
     var minimumAmount = 0; // how much energy/dominance you want before you click the buttons
+    var cacheloopTimeStart;
     let endLoop = true
     function start() {
         document.getElementsByClassName("flex items-center justify-center p-2")[0].id = "autom1ner-base"
         var autom1nerbase = document.getElementById("autom1ner-base")
         autom1nerbase.classList = "box flex items-center justify-center w-full h-full"
         autom1nerbase.innerHTML = `<div class="flex flex-col w-full h-full justify-around"><div class="flex items-center justify-between border-b pb-3"><div class="flex flex-col w-full"><div class="flex w-full items-center justify-center"><div class="flex items-center justify-center w-full"> <div class="text-2xl font-bold">Dwifte autom1ner</div></div></div> <div class="flex items-center justify-center m-3 w-full"><div id="activated" class="is-red-tag">Deactivated</div></div></div> </div> <div> <div class="flex items-center justify-center font-bold text-lg"><button id="activateBtn" class="
-              disabled:opacity-90 disabled:cursor-not-allowed
               focus:outline-none
               flex
               items-center
@@ -51,13 +51,16 @@
                 document.getElementById("activated").innerHTML = "Disabled"
                 document.getElementById("activateBtn").innerHTML = "Enable Autom1ner"
                 endLoop = true;
-                console.log(endLoop)
+                cacheloopTimeStart = loopTimeStart;
+                loopTimeStart = 0.05; // 3 seconds
             } else if (endLoop == true) {
                 document.getElementById("activated").classList = "is-blue-tag"
                 document.getElementById("activated").innerHTML = "Enabled"
                 document.getElementById("activateBtn").innerHTML = "Disable Autom1ner"
                 endLoop = false;
                 console.log(`autom1ner has started :)\nCreated by Dwifte\nLooping every ${loopTimeStart} minute(s)\nVerbose: ${verbose}`)
+                cacheloopTimeStart = loopTimeStart;
+                loopTimeStart = 0.1;
                 loop();
             }
         }
@@ -81,6 +84,7 @@
     }
         function loop() {
         setTimeout(function() {
+            loopTimeStart = cacheloopTimeStart;
             if (endLoop == true) return;
             var dominanceButton = document.getElementsByClassName("disabled:opacity-90 disabled:cursor-not-allowed focus:outline-none flex items-center font-bold justify-center py-1 px-3 text-gray-100 hover:text-gray-1 00 dark:text-gray-200 dark:hover:text-gray-300 bg-indigo-500 hover:bg-indigo-600 duration-200");
             var energyButton = document.getElementsByClassName("disabled:opacity-90 disabled:cursor-not-allowed focus:outline-none py-1 text-center font-bold uppercase tracking-wide text-gray-600 hover:text-green-500 dark:hover:text-green-400 bg-gray-200 dark:bg-gray-300 dark:hover:bg-green-200 dark:hover:bg-opacity-30 hover:bg-gray-100 duration-200");
